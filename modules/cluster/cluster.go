@@ -1,13 +1,13 @@
 package cluster
 
 import (
-	"github.com/infinitbyte/framework/core/cluster"
-	pb "github.com/infinitbyte/framework/core/cluster/pb"
-	"github.com/infinitbyte/framework/core/config"
-	"github.com/infinitbyte/framework/core/global"
-	"github.com/infinitbyte/framework/core/rpc"
-	"github.com/infinitbyte/framework/modules/cluster/demo/server"
-	"github.com/infinitbyte/framework/modules/cluster/discovery"
+	"github.com/huminghe/framework/core/cluster"
+	pb "github.com/huminghe/framework/core/cluster/pb"
+	"github.com/huminghe/framework/core/config"
+	"github.com/huminghe/framework/core/global"
+	"github.com/huminghe/framework/core/rpc"
+	"github.com/huminghe/framework/modules/cluster/demo/server"
+	"github.com/huminghe/framework/modules/cluster/discovery"
 )
 
 type ClusterModule struct {

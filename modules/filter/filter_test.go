@@ -18,11 +18,11 @@ package filter
 
 import (
 	"fmt"
-	. "github.com/infinitbyte/framework/core/env"
-	"github.com/infinitbyte/framework/core/filter"
-	"github.com/infinitbyte/framework/core/global"
-	"github.com/infinitbyte/framework/core/util"
-	"github.com/infinitbyte/framework/modules/boltdb"
+	. "github.com/huminghe/framework/core/env"
+	"github.com/huminghe/framework/core/filter"
+	"github.com/huminghe/framework/core/global"
+	"github.com/huminghe/framework/core/util"
+	"github.com/huminghe/framework/modules/boltdb"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"

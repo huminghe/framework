@@ -18,7 +18,7 @@ package pipeline
 
 import (
 	log "github.com/cihub/seelog"
-	"github.com/infinitbyte/framework/core/errors"
+	"github.com/huminghe/framework/core/errors"
 	"reflect"
 )
 

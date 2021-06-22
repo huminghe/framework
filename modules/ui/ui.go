@@ -18,15 +18,15 @@ package ui
 
 import (
 	log "github.com/cihub/seelog"
-	uis "github.com/infinitbyte/framework/core/api"
-	. "github.com/infinitbyte/framework/core/config"
-	"github.com/infinitbyte/framework/core/logger"
-	"github.com/infinitbyte/framework/core/ui"
-	"github.com/infinitbyte/framework/core/ui/websocket"
-	"github.com/infinitbyte/framework/core/vfs"
-	"github.com/infinitbyte/framework/modules/ui/admin"
-	"github.com/infinitbyte/framework/modules/ui/public"
-	"github.com/infinitbyte/framework/static"
+	uis "github.com/huminghe/framework/core/api"
+	. "github.com/huminghe/framework/core/config"
+	"github.com/huminghe/framework/core/logger"
+	"github.com/huminghe/framework/core/ui"
+	"github.com/huminghe/framework/core/ui/websocket"
+	"github.com/huminghe/framework/core/vfs"
+	"github.com/huminghe/framework/modules/ui/admin"
+	"github.com/huminghe/framework/modules/ui/public"
+	"github.com/huminghe/framework/static"
 	_ "net/http/pprof"
 )
 

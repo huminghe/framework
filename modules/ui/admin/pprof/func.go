@@ -2,7 +2,7 @@ package pprof
 
 import (
 	"fmt"
-	"github.com/infinitbyte/framework/core/util"
+	"github.com/huminghe/framework/core/util"
 	"regexp"
 	"sort"
 )

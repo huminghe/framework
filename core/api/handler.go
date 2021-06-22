@@ -19,9 +19,9 @@ package api
 import (
 	"encoding/json"
 	log "github.com/cihub/seelog"
-	"github.com/infinitbyte/framework/core/api/router"
-	"github.com/infinitbyte/framework/core/errors"
-	"github.com/infinitbyte/framework/core/util"
+	"github.com/huminghe/framework/core/api/router"
+	"github.com/huminghe/framework/core/errors"
+	"github.com/huminghe/framework/core/util"
 	"github.com/jmoiron/jsonq"
 	"io/ioutil"
 	"net/http"

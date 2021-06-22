@@ -17,16 +17,16 @@ limitations under the License.
 package modules
 
 import (
-	"github.com/infinitbyte/framework/core/module"
-	"github.com/infinitbyte/framework/modules/api"
-	"github.com/infinitbyte/framework/modules/boltdb"
-	"github.com/infinitbyte/framework/modules/cluster"
-	"github.com/infinitbyte/framework/modules/elastic"
-	"github.com/infinitbyte/framework/modules/filter"
-	"github.com/infinitbyte/framework/modules/pipeline"
-	"github.com/infinitbyte/framework/modules/queue"
-	"github.com/infinitbyte/framework/modules/stats"
-	"github.com/infinitbyte/framework/modules/ui"
+	"github.com/huminghe/framework/core/module"
+	"github.com/huminghe/framework/modules/api"
+	"github.com/huminghe/framework/modules/boltdb"
+	"github.com/huminghe/framework/modules/cluster"
+	"github.com/huminghe/framework/modules/elastic"
+	"github.com/huminghe/framework/modules/filter"
+	"github.com/huminghe/framework/modules/pipeline"
+	"github.com/huminghe/framework/modules/queue"
+	"github.com/huminghe/framework/modules/stats"
+	"github.com/huminghe/framework/modules/ui"
 )
 
 // RegisterSystemModule is where modules are registered

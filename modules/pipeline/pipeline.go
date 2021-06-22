@@ -18,10 +18,10 @@ package pipeline
 
 import (
 	log "github.com/cihub/seelog"
-	. "github.com/infinitbyte/framework/core/config"
-	"github.com/infinitbyte/framework/core/errors"
-	"github.com/infinitbyte/framework/core/global"
-	"github.com/infinitbyte/framework/core/pipeline"
+	. "github.com/huminghe/framework/core/config"
+	"github.com/huminghe/framework/core/errors"
+	"github.com/huminghe/framework/core/global"
+	"github.com/huminghe/framework/core/pipeline"
 )
 
 var started bool

@@ -17,10 +17,10 @@ limitations under the License.
 package admin
 
 import (
-	"github.com/infinitbyte/framework/core/api"
-	"github.com/infinitbyte/framework/core/ui"
-	"github.com/infinitbyte/framework/modules/ui/admin/ajax"
-	"github.com/infinitbyte/framework/modules/ui/common"
+	"github.com/huminghe/framework/core/api"
+	"github.com/huminghe/framework/core/ui"
+	"github.com/huminghe/framework/modules/ui/admin/ajax"
+	"github.com/huminghe/framework/modules/ui/common"
 )
 
 // InitUI register ui handlers

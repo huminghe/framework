@@ -18,8 +18,8 @@ package impl
 
 import (
 	log "github.com/cihub/seelog"
-	"github.com/infinitbyte/framework/core/global"
-	"github.com/infinitbyte/framework/core/util"
+	"github.com/huminghe/framework/core/global"
+	"github.com/huminghe/framework/core/util"
 	. "github.com/zeebo/sbloom"
 	"hash/fnv"
 	"io/ioutil"

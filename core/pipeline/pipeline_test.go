@@ -18,9 +18,9 @@ package pipeline
 
 import (
 	"fmt"
-	"github.com/infinitbyte/framework/core/env"
-	"github.com/infinitbyte/framework/core/global"
-	"github.com/infinitbyte/framework/core/util"
+	"github.com/huminghe/framework/core/env"
+	"github.com/huminghe/framework/core/global"
+	"github.com/huminghe/framework/core/util"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

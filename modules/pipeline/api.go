@@ -20,9 +20,9 @@ import (
 	"net/http"
 
 	"encoding/json"
-	"github.com/infinitbyte/framework/core/api"
-	"github.com/infinitbyte/framework/core/api/router"
-	"github.com/infinitbyte/framework/core/pipeline"
+	"github.com/huminghe/framework/core/api"
+	"github.com/huminghe/framework/core/api/router"
+	"github.com/huminghe/framework/core/pipeline"
 	"strconv"
 )
 

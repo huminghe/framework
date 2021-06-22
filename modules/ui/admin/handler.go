@@ -1,11 +1,11 @@
 package admin
 
 import (
-	"github.com/infinitbyte/framework/core/api"
-	"github.com/infinitbyte/framework/core/api/router"
-	"github.com/infinitbyte/framework/modules/ui/admin/console"
-	"github.com/infinitbyte/framework/modules/ui/admin/dashboard"
-	"github.com/infinitbyte/framework/modules/ui/common"
+	"github.com/huminghe/framework/core/api"
+	"github.com/huminghe/framework/core/api/router"
+	"github.com/huminghe/framework/modules/ui/admin/console"
+	"github.com/huminghe/framework/modules/ui/admin/dashboard"
+	"github.com/huminghe/framework/modules/ui/common"
 	"net/http"
 )
 

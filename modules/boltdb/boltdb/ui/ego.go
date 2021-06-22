@@ -6,7 +6,7 @@ package ui
 import (
 	"fmt"
 	"github.com/boltdb/bolt"
-	"github.com/infinitbyte/framework/modules/ui/common"
+	"github.com/huminghe/framework/modules/ui/common"
 	"html"
 	"io"
 	"net/http"
