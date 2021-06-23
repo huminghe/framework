@@ -8,7 +8,6 @@ require (
 	github.com/armon/go-metrics v0.3.9
 	github.com/asdine/storm v2.1.2+incompatible
 	github.com/bkaradzic/go-lz4 v1.0.0
-	github.com/boltdb/bolt v1.3.1
 	github.com/cihub/seelog v0.0.0-20170130134532-f561c5e57575
 	github.com/elastic/go-ucfg v0.8.3
 	github.com/emirpasic/gods v1.12.0
@@ -33,7 +32,7 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	github.com/zeebo/sbloom v0.0.0-20151106181526-405c65bd9be0
-	go.etcd.io/bbolt v1.3.6 // indirect
+	go.etcd.io/bbolt v1.3.6
 	golang.org/x/net v0.0.0-20210614182718-04defd469f4e
 	golang.org/x/oauth2 v0.0.0-20210622215436-a8dc77f794b6
 	google.golang.org/grpc v1.38.0
