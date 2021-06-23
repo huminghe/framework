@@ -22,7 +22,7 @@ import (
 	"github.com/asdine/storm/codec/protobuf"
 	"github.com/asdine/storm/q"
 	lz4 "github.com/bkaradzic/go-lz4"
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 	log "github.com/cihub/seelog"
 	"github.com/emirpasic/gods/sets/hashset"
 	"github.com/huminghe/framework/core/api"
@@ -62,7 +62,7 @@ func initBucket(name string) error {
 		return nil
 	}
 
-	db.Bolt.Update(func(tx *bolt.Tx) error {
+	db.Bolt.Update(func(tx *bbolt.Tx) error {
 		_, err := tx.CreateBucketIfNotExists([]byte(name))
 		if err != nil {
 			log.Error("create bucket: ", err, ",", name)
@@ -82,7 +82,7 @@ func (store BoltdbStore) Open() error {
 	}
 
 	var err error
-	db, err = storm.Open(store.FileName, storm.BoltOptions(0600, &bolt.Options{Timeout: 5 * time.Second}), storm.Codec(protobuf.Codec))
+	db, err = storm.Open(store.FileName, storm.BoltOptions(0600, &bbolt.Options{Timeout: 5 * time.Second}), storm.Codec(protobuf.Codec))
 
 	if err != nil {
 		log.Errorf("error open boltdb: %s, %s", store.FileName, err)
@@ -126,7 +126,7 @@ func (store BoltdbStore) GetValue(bucket string, key []byte) ([]byte, error) {
 	initBucket(bucket)
 
 	var ret []byte = nil
-	db.Bolt.View(func(tx *bolt.Tx) error {
+	db.Bolt.View(func(tx *bbolt.Tx) error {
 		b := tx.Bucket([]byte(bucket))
 		v := b.Get(key)
 		if v != nil {
@@ -150,7 +150,7 @@ func (store BoltdbStore) AddValue(bucket string, key []byte, value []byte) error
 
 	initBucket(bucket)
 
-	db.Bolt.Update(func(tx *bolt.Tx) error {
+	db.Bolt.Update(func(tx *bbolt.Tx) error {
 		b := tx.Bucket([]byte(bucket))
 		err := b.Put(key, value)
 		return err
@@ -159,7 +159,7 @@ func (store BoltdbStore) AddValue(bucket string, key []byte, value []byte) error
 }
 
 func (store BoltdbStore) DeleteKey(bucket string, key []byte) error {
-	db.Bolt.Update(func(tx *bolt.Tx) error {
+	db.Bolt.Update(func(tx *bbolt.Tx) error {
 		b := tx.Bucket([]byte(bucket))
 		err := b.Delete(key)
 		return err
@@ -168,7 +168,7 @@ func (store BoltdbStore) DeleteKey(bucket string, key []byte) error {
 }
 
 func (store BoltdbStore) DeleteBucket(bucket string) error {
-	db.Bolt.Update(func(tx *bolt.Tx) error {
+	db.Bolt.Update(func(tx *bbolt.Tx) error {
 		err := tx.DeleteBucket([]byte(bucket))
 		return err
 	})
@@ -176,7 +176,7 @@ func (store BoltdbStore) DeleteBucket(bucket string) error {
 }
 
 func (store BoltdbStore) boltDBStatusAction(w http.ResponseWriter, r *http.Request) {
-	err := db.Bolt.View(func(tx *bolt.Tx) error {
+	err := db.Bolt.View(func(tx *bbolt.Tx) error {
 		showUsage := (r.FormValue("usage") == "true")
 		// Use the direct page id, if available.
 		if r.FormValue("id") != "" {

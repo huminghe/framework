@@ -2,8 +2,7 @@ package raftboltdb
 
 import (
 	"errors"
-
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 	"github.com/huminghe/framework/core/cluster/raft"
 )
 
@@ -27,7 +26,7 @@ var (
 // a LogStore and StableStore.
 type BoltStore struct {
 	// conn is the underlying handle to the db.
-	conn *bolt.DB
+	conn *bbolt.DB
 
 	// The path to the Bolt database file
 	path string
@@ -36,7 +35,7 @@ type BoltStore struct {
 // NewBoltStore takes a file path and returns a connected Raft backend.
 func NewBoltStore(path string) (*BoltStore, error) {
 	// Try to connect
-	handle, err := bolt.Open(path, dbFileMode, nil)
+	handle, err := bbolt.Open(path, dbFileMode, nil)
 	if err != nil {
 		return nil, err
 	}

@@ -6,8 +6,7 @@ package ui
 import (
 	"fmt"
 	"unsafe"
-
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 )
 
 const pageHeaderSize = int(unsafe.Offsetof(((*page)(nil)).ptr))
@@ -110,7 +109,7 @@ func (p *page) inuse() int {
 }
 
 // usage calculates a histogram of page sizes within nested pages.
-func usage(tx *bolt.Tx, pgid pgid) map[int]int {
+func usage(tx *bbolt.Tx, pgid pgid) map[int]int {
 	m := make(map[int]int)
 	forEachPage(tx, pgid, func(p *page) {
 		m[p.inuse()]++
@@ -185,7 +184,7 @@ type tx struct {
 // find locates a page using either a set of page indices or a direct page id.
 // It returns a list of parent page numbers if the indices are used.
 // It also returns the page reference.
-func find(tx *bolt.Tx, directID int, indexes []int) (*page, []pgid, error) {
+func find(tx *bbolt.Tx, directID int, indexes []int) (*page, []pgid, error) {
 	// If a direct ID is provided then just use it.
 	if directID != 0 {
 		return pageAt(tx, pgid(directID)), nil, nil
@@ -201,13 +200,13 @@ func find(tx *bolt.Tx, directID int, indexes []int) (*page, []pgid, error) {
 }
 
 // retrieves the page from a given transaction.
-func pageAt(tx *bolt.Tx, id pgid) *page {
+func pageAt(tx *bbolt.Tx, id pgid) *page {
 	info := tx.DB().Info()
 	return (*page)(unsafe.Pointer(info.Data + uintptr(info.PageSize*int(id))))
 }
 
 // forEachPage recursively iterates over all pages starting at a given page.
-func forEachPage(tx *bolt.Tx, pgid pgid, fn func(*page)) {
+func forEachPage(tx *bbolt.Tx, pgid pgid, fn func(*page)) {
 	p := pageAt(tx, pgid)
 	fn(p)
 

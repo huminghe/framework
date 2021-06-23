@@ -9,8 +9,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 	"unsafe"
-
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 )
 
 // tostr converts a byte slice to a string if all characters are printable.
@@ -41,7 +40,7 @@ func trunc(s string, n int) string {
 
 // traverses the page hierarchy by index and returns associated page ids.
 // returns an error if an index is out of range.
-func pgids(t *bolt.Tx, indexes []int) ([]pgid, error) {
+func pgids(t *bbolt.Tx, indexes []int) ([]pgid, error) {
 	tx := (*tx)(unsafe.Pointer(t))
 
 	p := pageAt(t, tx.meta.root.root)

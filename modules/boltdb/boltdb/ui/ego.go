@@ -5,7 +5,7 @@ package ui
 
 import (
 	"fmt"
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 	"github.com/huminghe/framework/modules/ui/common"
 	"html"
 	"io"
@@ -26,14 +26,14 @@ func Index(w io.Writer) error {
 	_, _ = io.WriteString(w, "\n\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta http-equiv=\"refresh\" content=\"0; url=page\">\n  </head>\n\n  <body>redirecting...</body>\n</html>\n")
 	return nil
 }
-func nav(w io.Writer, tx *bolt.Tx) error {
+func nav(w io.Writer, tx *bbolt.Tx) error {
 	_, _ = io.WriteString(w, "\n\n")
 	_, _ = io.WriteString(w, "\n")
 	_, _ = io.WriteString(w, "\n\n")
 	_, _ = io.WriteString(w, html.EscapeString(fmt.Sprint(filepath.Base(tx.DB().Path()))))
 	return nil
 }
-func Page(w http.ResponseWriter, r *http.Request, tx *bolt.Tx, indexes []int, directID int, showUsage bool) error {
+func Page(w http.ResponseWriter, r *http.Request, tx *bbolt.Tx, indexes []int, directID int, showUsage bool) error {
 	_, _ = io.WriteString(w, "\n\n")
 	_, _ = io.WriteString(w, "\n")
 	_, _ = io.WriteString(w, "\n")
