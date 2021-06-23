@@ -5,7 +5,7 @@ package pprof
 
 import (
 	"fmt"
-	"github.com/huminghe/framework/core/ui/common"
+	"github.com/huminghe/framework/modules/ui/common"
 	"io"
 	"net/http"
 )
