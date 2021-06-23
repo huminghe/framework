@@ -43,7 +43,7 @@ func (module SimpleStatsModule) Setup(cfg *Config) {
 	stats.Register(data)
 
 	//register api
-	api.HandleAPIFunc("/stats", module.StatsAction)
+	api.HandleAPIFunc("/stats_back", module.StatsAction)
 }
 
 func (module SimpleStatsModule) Start() error {
